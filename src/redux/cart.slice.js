@@ -6,7 +6,13 @@ import { useSelector } from "react-redux";
 
 const BASE_URL=process.env.REACT_APP_BASE_URL;
 const userData=localStorage.getItem('currentUser');
-const{userId,userType}=JSON.parse(userData);
+let userId=''
+let userType=''
+if(userData){
+   userId=JSON.parse(userData)?.userId;
+   userType=JSON.parse(userData)?.userType
+}
+
 
 
 
